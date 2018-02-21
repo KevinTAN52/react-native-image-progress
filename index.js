@@ -82,12 +82,6 @@ export const createImageProgress = ImageComponent =>
       }
     }
 
-    measure(cb) {
-      if (this.ref) {
-        this.ref.measure(cb);
-      }
-    }
-
     ref = null;
     handleRef = ref => {
       this.ref = ref;
@@ -206,7 +200,7 @@ export const createImageProgress = ImageComponent =>
             onError={this.handleError}
             onLoad={this.handleLoad}
             source={source}
-            style={StyleSheet.absoluteFill}
+            style={this.props.style}
           />
           {indicatorElement}
           {children}
